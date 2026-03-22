@@ -30,9 +30,14 @@ def load_or_train_model():
         model.fit(X_cv, y)
         
         # Save model and vectorizer
-        os.makedirs('model', exist_ok=True)
-        joblib.dump(model, model_path)
-        joblib.dump(vectorizer, vectorizer_path)
+        try:
+            os.makedirs('model', exist_ok=True)
+            joblib.dump(model, model_path)
+            joblib.dump(vectorizer, vectorizer_path)
+        except Exception as e:
+            print(f"Failed to save model to disk: {e}")
+            pass
+
     
     return model, vectorizer
 

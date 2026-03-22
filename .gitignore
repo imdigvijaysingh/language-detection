@@ -9,8 +9,6 @@ node_modules/
 # Next.js
 /.next/
 /out/
-
-# Production
 /build
 
 # Misc
@@ -24,6 +22,7 @@ yarn-error.log*
 
 # Local env files
 .env*.local
+.env
 
 # Model files
 /model/
@@ -34,4 +33,40 @@ yarn-error.log*
 
 # TypeScript
 *.tsbuildinfo
-next-env.d.ts 
+next-env.d.ts
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+.venv/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
