@@ -1,75 +1,41 @@
 # Language Detection Web Application 🌍
 
-This web application can detect the language of any text you input. Whether you're curious about a foreign text or need to identify languages for work, this tool makes it quick and easy!
+A modern web application built with Next.js and Python (FastAPI) that detects the language of any typed text instantly using a Machine Learning model (Multinomial Naive Bayes).
 
-## 🎯 Features
+## 🚀 Tech Stack
 
-- **22 Languages Supported**: Including Arabic, Chinese, Dutch, English, Estonian, French, Hindi, Indonesian, Japanese, Korean, Latin, Persian, Portuguese, Pushto, Romanian, Russian, Spanish, Swedish, Tamil, Thai, Turkish, and Urdu
-- **High Accuracy**: 94.23% accurate across all supported languages
-- **Real-time Detection**: Get results instantly as you type
-- **Confidence Score**: See how confident the system is about its detection
-- **Modern Interface**: Clean, responsive design that works on all devices
-- **Accessibility**: Built with screen readers and keyboard navigation in mind
+- **Frontend:** Next.js, React, Tailwind CSS
+- **Backend:** FastAPI (Python), Uvicorn
+- **Machine Learning:** Scikit-learn, Pandas, NumPy
 
-## 🚀 Try It Out!
+## 💻 How to Run Locally
 
-Visit our live demo: [Language Detection App](https://your-vercel-url-here)
+You can easily run this project locally by starting the backend and frontend servers. 
 
-Simply:
-1. Type or paste any text into the input box
-2. Click "Detect" or press Enter
-3. See the detected language and confidence score instantly!
+### Prerequisites
+Make sure you have Node.js and Python installed on your machine.
+```bash
+npm install
+python -m pip install -r requirements.txt
+```
+
+### Starting the Servers
+
+Because we configured a unified dev script, you can spin up both the Next.js frontend and the Python backend with a single command!
+
+Simply open your terminal in the project folder and run:
+`npm run dev`
+
+*(This uses the `concurrently` package to simultaneously run `npm run dev:frontend` and `npm run dev:backend`)*
+
+Now, open [http://localhost:3000](http://localhost:3000) in your browser. Whenever you type text, it will be accurately routed to the Python ML backend to instantly detect the language!
 
 ## 💡 How It Works
 
-The application uses machine learning to identify languages. Here's a simple breakdown:
-
-1. **Input**: You provide some text
-2. **Analysis**: Our AI model processes the text's patterns
-3. **Detection**: The model identifies the most likely language
-4. **Confidence**: You get a percentage showing how sure the model is
-
-## 🎯 Accuracy by Language
-
-Here's how accurate our system is for each language:
-
-| Language    | Accuracy |
-|------------|----------|
-| Arabic     | 100%     |
-| Chinese    | 96%      |
-| English    | 81%      |
-| French     | 97%      |
-| Spanish    | 98%      |
-| (and more...) |        |
-
-## 🛠️ Technical Details (For Developers)
-
-Built using modern technology stack:
-- Frontend: Next.js with TypeScript and TailwindCSS
-- Backend: FastAPI (Python)
-- ML Model: Scikit-learn
-- Deployment: Vercel
-
-## 📝 Note
-
-- For best results, provide at least a few words of text
-- Some similar languages might need more text for accurate detection
-- The confidence score helps you know how reliable the detection is
-
-## 🤝 Contributing
-
-We welcome contributions! If you'd like to help improve this project:
-1. Fork the repository
-2. Create your feature branch
-3. Submit a pull request
-
-## 📄 License
-
-This project is open source and available under the MIT License.
-
-## 🙋‍♂️ Support
-
-Having issues or questions? Create an issue on our GitHub repository!
+1. **Input**: You type or paste some text.
+2. **Analysis**: The Next.js frontend sends the text to the local Python FastAPI endpoint.
+3. **Detection**: Our `scikit-learn` Naive Bayes model processes the text's patterns and calculates probabilities.
+4. **Confidence**: You receive the identified language along with a confidence percentage detailing how sure the model is.
 
 ---
-Made with ❤️ by [Digvijay](https://github.com/digvijay789065) 
+Made with ❤️ by [Digvijay](https://github.com/imdigvijaysingh)
